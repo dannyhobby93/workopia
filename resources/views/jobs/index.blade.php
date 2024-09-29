@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
     <h1>Jobs</h1>
     <ul>
         @foreach ($jobs as $job)
@@ -9,4 +7,4 @@
             </li>
         @endforeach
     </ul>
-@endsection
+</x-layout>

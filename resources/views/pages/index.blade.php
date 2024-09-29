@@ -1,5 +1,3 @@
-@extends('layout')
-
-@section('content')
-    <h1>Home Page</h1>
-@endsection
+<x-layout>
+    <h1>Homepage</h1>
+</x-layout>

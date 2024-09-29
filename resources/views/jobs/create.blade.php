@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
     Create New Job
 
     <form action="/jobs" method="POST">
@@ -9,4 +7,4 @@
         <input type="text" name="description" placeholder="Description">
         <button type="submit">Create</button>
     </form>
-@endsection
+</x-layout>
