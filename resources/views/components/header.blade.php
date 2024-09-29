@@ -4,6 +4,7 @@
             <a href="{{ url('/') }}">Workopia</a>
         </h1>
         <nav class="hidden md:flex items-center space-x-4">
+            <x-nav-link url="/">Home</x-nav-link>
             <x-nav-link url="jobs">All Jobs</x-nav-link>
             <x-nav-link url="jobs/saved">Saved Jobs</x-nav-link>
             <x-nav-link url="login">Login</x-nav-link>
@@ -17,6 +18,7 @@
     </div>
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-blue-900 text-white mt-5 pb-4 space-y-2">
+        <x-nav-link url="/" mobile>Home</x-nav-link>
         <x-nav-link url="jobs" mobile>All Jobs</x-nav-link>
         <x-nav-link url="jobs/saved" mobile>Saved Jobs</x-nav-link>
         <x-nav-link url="login" mobile>Login</x-nav-link>
