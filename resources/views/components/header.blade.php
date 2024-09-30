@@ -6,11 +6,15 @@
         <nav class="hidden md:flex items-center space-x-4">
             <x-nav-link url="/">Home</x-nav-link>
             <x-nav-link url="jobs">All Jobs</x-nav-link>
-            <x-nav-link url="jobs/saved">Saved Jobs</x-nav-link>
-            <x-nav-link url="login">Login</x-nav-link>
-            <x-nav-link url="register">Register</x-nav-link>
-            <x-nav-link url="dashboard" icon="gauge">Dashboard</x-nav-link>
-            <x-button-link url="jobs/create" icon="edit">Create Job</x-button-link>
+            @auth
+                <x-nav-link url="jobs/saved">Saved Jobs</x-nav-link>
+                <x-nav-link url="dashboard" icon="gauge">Dashboard</x-nav-link>
+                <x-button-link url="jobs/create" icon="edit">Create Job</x-button-link>
+                <x-logout />
+            @else
+                <x-nav-link url="login">Login</x-nav-link>
+                <x-nav-link url="register">Register</x-nav-link>
+            @endauth
         </nav>
         <button id="hamburger" class="text-white md:hidden flex items-center" @click="open = !open">
             <i class="fa fa-bars text-2xl"></i>
@@ -21,10 +25,14 @@
         x-show="open">
         <x-nav-link url="/" mobile>Home</x-nav-link>
         <x-nav-link url="jobs" mobile>All Jobs</x-nav-link>
-        <x-nav-link url="jobs/saved" mobile>Saved Jobs</x-nav-link>
-        <x-nav-link url="login" mobile>Login</x-nav-link>
-        <x-nav-link url="register" mobile>Register</x-nav-link>
-        <x-nav-link url="dashboard" icon="gauge" mobile>Dashboard</x-nav-link>
-        <x-button-link url="jobs/create" icon="edit" block>Create Job</x-button-link>
+        @auth
+            <x-nav-link url="jobs/saved" mobile>Saved Jobs</x-nav-link>
+            <x-nav-link url="dashboard" icon="gauge" mobile>Dashboard</x-nav-link>
+            <x-button-link url="jobs/create" icon="edit" block>Create Job</x-button-link>
+            <x-logout mobile />
+        @else
+            <x-nav-link url="login" mobile>Login</x-nav-link>
+            <x-nav-link url="register" mobile>Register</x-nav-link>
+        @endauth
     </div>
 </header>
