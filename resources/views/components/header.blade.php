@@ -8,7 +8,7 @@
             <x-nav-link url="jobs">All Jobs</x-nav-link>
             @auth
                 <x-nav-link url="jobs/saved">Saved Jobs</x-nav-link>
-                <x-nav-link url="dashboard" icon="gauge">Dashboard</x-nav-link>
+                <x-nav-link url="dashboard">Dashboard</x-nav-link>
                 <x-button-link url="jobs/create" icon="edit">Create Job</x-button-link>
                 <x-logout />
             @else
@@ -27,7 +27,7 @@
         <x-nav-link url="jobs" mobile>All Jobs</x-nav-link>
         @auth
             <x-nav-link url="jobs/saved" mobile>Saved Jobs</x-nav-link>
-            <x-nav-link url="dashboard" icon="gauge" mobile>Dashboard</x-nav-link>
+            <x-nav-link url="dashboard" mobile>Dashboard</x-nav-link>
             <x-button-link url="jobs/create" icon="edit" block>Create Job</x-button-link>
             <x-logout mobile />
         @else
