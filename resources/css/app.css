@@ -15,3 +15,7 @@
 .hero {
     background-image: url("../images/forge.png");
 }
+
+[x-cloak] {
+    display: none !important;
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -15,6 +16,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+    Route::post('/jobs/{job}/apply', [ApplicantController::class, 'store'])->name('applicants.store');
+    Route::delete('/applicants/{applicant}', [ApplicantController::class, 'destroy'])->name('applicants.destroy');
 
     Route::get('/bookmarks', [BookmarkController::class, 'index'])->name('bookmarks.index');
     Route::post('/bookmarks/{job}', [BookmarkController::class, 'store'])->name('bookmarks.store');
@@ -33,15 +37,6 @@ Route::resource('jobs', JobController::class)
     ->only(['create', 'store', 'edit', 'update', 'destroy']);
 Route::resource('jobs', JobController::class)
     ->except(['create', 'store', 'edit', 'update', 'destroy']);
-
-
-
-
-
-
-
-
-
 
 // Route::get('/test', function (Request $request) {
 //     return [
