@@ -7,8 +7,18 @@
             <x-nav-link url="/">Home</x-nav-link>
             <x-nav-link url="jobs">All Jobs</x-nav-link>
             @auth
-                <x-nav-link url="jobs/saved">Saved Jobs</x-nav-link>
+                <x-nav-link url="bookmarks">Saved Jobs</x-nav-link>
                 <x-nav-link url="dashboard">Dashboard</x-nav-link>
+                <!-- User Avatar -->
+                <div class="flex items-center space-x-3">
+                    @if (Auth::user()->avatar)
+                        <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}"
+                            class="w-10 h-10 rounded-full" />
+                    @else
+                        <img src="{{ asset('storage/avatars/default-avatar.png') }}" alt="{{ Auth::user()->name }}"
+                            class="w-10 h-10 rounded-full" />
+                    @endif
+                </div>
                 <x-button-link url="jobs/create" icon="edit">Create Job</x-button-link>
                 <x-logout />
             @else
@@ -26,7 +36,7 @@
         <x-nav-link url="/" mobile>Home</x-nav-link>
         <x-nav-link url="jobs" mobile>All Jobs</x-nav-link>
         @auth
-            <x-nav-link url="jobs/saved" mobile>Saved Jobs</x-nav-link>
+            <x-nav-link url="bookmarks" mobile>Saved Jobs</x-nav-link>
             <x-nav-link url="dashboard" mobile>Dashboard</x-nav-link>
             <x-button-link url="jobs/create" icon="edit" block>Create Job</x-button-link>
             <x-logout mobile />
